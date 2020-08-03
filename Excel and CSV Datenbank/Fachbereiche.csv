@@ -1,14 +1,14 @@
-FBNr,Bezeichnung,Ort,Infrastruktur
-FB01,Rechtswissenschaften,A-Strasse 1,Mensa
-FB02,Wirtschaftswissenschaften,B-Strasse 28,Mensa
-FB03,Gesellschaftswissenschaften und Philosophie,C-Strasse 2,Mensa
-FB04,Psychologie,D-Strasse 50,Mensa
-FB05,Ev. Theologie,E-Strasse 38,Mensa
-FB06,Geschichte und Kulturwissenschaften,F-Strasse 9,Mensa
-FB10,Fremdsprachliche Philologien,B-Strasse 55,Mensa
-FB12,Mathematik und Informatik,E-Strasse 59,Mensa
-FB13,Physik,B-Strasse 6,Mensa
-FB15,Chemie,A-Strasse 62,Mensa
-FB17,Biologie,E-Strasse 76,"Mensa, Bibliothek"
-FB19,Geographie,C-Strasse 8,"Mensa, Bibliothek"
-FB20,Medizin,D-Strasse 85,"Mensa, Bibliothek"
+FBNr,Bezeichnung,Ort
+FB01,Rechtswissenschaften,A-Strasse 1
+FB02,Wirtschaftswissenschaften,B-Strasse 28
+FB03,Gesellschaftswissenschaften und Philosophie,C-Strasse 2
+FB04,Psychologie,D-Strasse 50
+FB05,Ev. Theologie,E-Strasse 38
+FB06,Geschichte und Kulturwissenschaften,F-Strasse 9
+FB10,Fremdsprachliche Philologien,B-Strasse 55
+FB12,Mathematik und Informatik,E-Strasse 59
+FB13,Physik,B-Strasse 6
+FB15,Chemie,A-Strasse 62
+FB17,Biologie,E-Strasse 76
+FB19,Geographie,C-Strasse 8
+FB20,Medizin,D-Strasse 85

@@ -1,4 +1,4 @@
-VNr,Dauer,Von,Zu,Verkehrsart
+VNr,Dauer,Von ,Zu,Verkehrsart
 V01,20 min,FB01,FB02,Bus
 V02,15 min,FB13,FB03,Bus
 V03,25 min,FB19,FB04,Bus
