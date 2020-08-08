@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<key id="ort" for="node" attr.name="ort"/>
+<key id="titel" for="node" attr.name="titel"/>
+<key id="art" for="node" attr.name="art"/>
+<key id="pnr" for="node" attr.name="pnr"/>
+<key id="bezeichnung" for="node" attr.name="bezeichnung"/>
+<key id="name" for="node" attr.name="name"/>
+<key id="labelV" for="node" attr.name="labelV"/>
+<key id="fbnr" for="node" attr.name="fbnr"/>
+<key id="art" for="edge" attr.name="art"/>
+<key id="vtnr" for="edge" attr.name="vtnr"/>
+<key id="dauer" for="edge" attr.name="dauer"/>
+<key id="labelE" for="edge" attr.name="labelE"/>
+<key id="vnr" for="edge" attr.name="vnr"/>
+<graph id="G" edgedefault="directed">
+<node id="n0" labelV="Person"><data key="labelV">Person</data><data key="titel">Doktor</data><data key="pnr">P01</data><data key="name">Alfa</data></node>
+<node id="n1" labelV="Person"><data key="labelV">Person</data><data key="name">Bravo</data><data key="titel">Doktor</data><data key="pnr">P02</data></node>
+<node id="n2" labelV="Person"><data key="labelV">Person</data><data key="name">Charlie</data><data key="titel">Professor</data><data key="pnr">P03</data></node>
+<node id="n3" labelV="Person"><data key="labelV">Person</data><data key="name">Delta</data><data key="titel">Professor</data><data key="pnr">P04</data></node>
+<node id="n4" labelV="Person"><data key="labelV">Person</data><data key="titel">Professor</data><data key="pnr">P05</data><data key="name">Echo</data></node>
+<node id="n5" labelV="Person"><data key="labelV">Person</data><data key="name">Foxtrot</data><data key="titel">Professor</data><data key="pnr">P06</data></node>
+<node id="n6" labelV="Person"><data key="labelV">Person</data><data key="titel">Professor</data><data key="pnr">P07</data><data key="name">Golf</data></node>
+<node id="n7" labelV="Person"><data key="labelV">Person</data><data key="name">Hotel</data><data key="titel">Professor</data><data key="pnr">P08</data></node>
+<node id="n8" labelV="Person"><data key="labelV">Person</data><data key="name">India</data><data key="titel">Doktor</data><data key="pnr">P09</data></node>
+<node id="n9" labelV="Person"><data key="labelV">Person</data><data key="titel">Professor</data><data key="pnr">P10</data><data key="name">Kilo</data></node>
+<node id="n10" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="bezeichnung">Rechtswissenschaften</data><data key="ort">A-Strasse 1</data><data key="fbnr">FB01</data></node>
+<node id="n11" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="bezeichnung">Wirtschaftswissenschaften</data><data key="ort">B-Strasse 28</data><data key="fbnr">FB02</data></node>
+<node id="n12" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="ort">C-Strasse 2</data><data key="bezeichnung">Gesellschaftswissenschaften und Philosophie</data><data key="fbnr">FB03</data></node>
+<node id="n13" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB04</data><data key="ort">D-Strasse 50</data><data key="bezeichnung">Psychologie</data></node>
+<node id="n14" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB05</data><data key="ort">E-Strasse 38</data><data key="bezeichnung">Ev. Theologie</data></node>
+<node id="n15" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="bezeichnung">Geschichte und Kulturwissenschaften</data><data key="ort">F-Strasse 9</data><data key="fbnr">FB06</data></node>
+<node id="n16" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="bezeichnung">Fremdsprachliche Philologien</data><data key="ort">B-Strasse 55</data><data key="fbnr">FB10</data></node>
+<node id="n17" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="bezeichnung">Mathematik und Informatik</data><data key="ort">E-Strasse 59</data><data key="fbnr">FB12</data></node>
+<node id="n18" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB13</data><data key="ort">B-Strasse 6</data><data key="bezeichnung">Physik</data></node>
+<node id="n19" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB15</data><data key="ort">A-Strasse 62</data><data key="bezeichnung">Chemie</data></node>
+<node id="n20" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB17</data><data key="ort">E-Strasse 76</data><data key="bezeichnung">Biologie</data></node>
+<node id="n21" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB19</data><data key="ort">C-Strasse 8</data><data key="bezeichnung">Geographie</data></node>
+<node id="n22" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB20</data><data key="ort">D-Strasse 85</data><data key="bezeichnung">Medizin</data></node>
+<node id="n23" labelV="Infrastruktur"><data key="labelV">Infrastruktur</data><data key="art">Mensa</data></node>
+<node id="n24" labelV="Infrastruktur"><data key="labelV">Infrastruktur</data><data key="art">Bibliothek</data></node>
+<edge id="e0" source="n10" target="n11" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">20 min</data><data key="vnr">V01</data></edge>
+<edge id="e1" source="n18" target="n12" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15 min</data><data key="vnr">V02</data></edge>
+<edge id="e2" source="n21" target="n13" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">25 min</data><data key="vnr">V03</data></edge>
+<edge id="e3" source="n22" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">30 min</data><data key="vnr">V04</data></edge>
+<edge id="e4" source="n17" target="n20" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">10 min</data><data key="vnr">V05</data></edge>
+<edge id="e5" source="n20" target="n15" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">10 min</data><data key="vnr">V06</data></edge>
+<edge id="e6" source="n15" target="n19" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15 min</data><data key="vnr">V07</data></edge>
+<edge id="e7" source="n10" target="n19" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V08</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e8" source="n19" target="n10" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V09</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e9" source="n11" target="n16" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V10</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e10" source="n16" target="n11" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V11</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e11" source="n16" target="n18" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V12</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e12" source="n18" target="n16" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V13</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e13" source="n12" target="n21" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V14</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e14" source="n21" target="n12" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V15</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e15" source="n13" target="n22" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V16</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e16" source="n22" target="n13" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V17</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e17" source="n14" target="n17" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V18</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e18" source="n17" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V19</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e19" source="n17" target="n20" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V20</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e20" source="n20" target="n17" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="vnr">V21</data><data key="art">zu Fuß</data><data key="dauer">5 min</data></edge>
+<edge id="e21" source="n2" target="n10" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT01</data></edge>
+<edge id="e22" source="n2" target="n11" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT02</data></edge>
+<edge id="e23" source="n2" target="n12" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT03</data></edge>
+<edge id="e24" source="n3" target="n13" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT04</data></edge>
+<edge id="e25" source="n4" target="n14" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT05</data></edge>
+<edge id="e26" source="n5" target="n15" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT06</data></edge>
+<edge id="e27" source="n6" target="n16" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT07</data></edge>
+<edge id="e28" source="n7" target="n17" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT08</data></edge>
+<edge id="e29" source="n4" target="n18" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT09</data></edge>
+<edge id="e30" source="n3" target="n10" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT10</data></edge>
+<edge id="e31" source="n0" target="n11" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT11</data></edge>
+<edge id="e32" source="n1" target="n19" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT12</data></edge>
+<edge id="e33" source="n8" target="n15" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT13</data></edge>
+<edge id="e34" source="n8" target="n19" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT14</data></edge>
+<edge id="e35" source="n8" target="n19" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT15</data></edge>
+<edge id="e36" source="n8" target="n21" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT16</data></edge>
+<edge id="e37" source="n8" target="n21" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT17</data></edge>
+<edge id="e38" source="n4" target="n20" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT18</data></edge>
+<edge id="e39" source="n5" target="n11" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT19</data></edge>
+<edge id="e40" source="n6" target="n13" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT20</data></edge>
+<edge id="e41" source="n9" target="n14" labelE="HALT"><data key="labelE">HALT</data><data key="art">Seminar</data><data key="vtnr">VT21</data></edge>
+<edge id="e42" source="n10" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e43" source="n11" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e44" source="n12" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e45" source="n13" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e46" source="n14" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e47" source="n15" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e48" source="n16" target="n24" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e49" source="n16" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e50" source="n17" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e51" source="n18" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e52" source="n19" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e53" source="n20" target="n24" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e54" source="n20" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e55" source="n21" target="n24" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e56" source="n21" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e57" source="n22" target="n24" labelE="HAT"><data key="labelE">HAT</data></edge>
+<edge id="e58" source="n22" target="n23" labelE="HAT"><data key="labelE">HAT</data></edge>
+</graph>
+</graphml>
