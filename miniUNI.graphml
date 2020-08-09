@@ -6,7 +6,7 @@
 <key id="pnr" for="node" attr.name="pnr"/>
 <key id="name" for="node" attr.name="name"/>
 <key id="labelV" for="node" attr.name="labelV"/>
-<key id="title" for="node" attr.name="title"/>
+<key id="titel" for="node" attr.name="titel"/>
 <key id="fbnr" for="node" attr.name="fbnr"/>
 <key id="art" for="edge" attr.name="art"/>
 <key id="vtnr" for="edge" attr.name="vtnr"/>
@@ -16,8 +16,8 @@
 <graph id="G" edgedefault="directed">
 <node id="n0" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB19</data><data key="ort">C-Strasse 8</data><data key="bezeichnung">Geographie</data></node>
 <node id="n1" labelV="Infrastruktur"><data key="labelV">Infrastruktur</data><data key="art">Mensa</data></node>
-<node id="n2" labelV="Person"><data key="labelV">Person</data><data key="title">Doktor</data><data key="pnr">P01</data><data key="name">Alpha</data></node>
-<node id="n3" labelV="Person"><data key="labelV">Person</data><data key="title">Professor</data><data key="pnr">P03</data><data key="name">Charlie</data></node>
+<node id="n2" labelV="Person"><data key="labelV">Person</data><data key="titel">Doktor</data><data key="pnr">P01</data><data key="name">Alpha</data></node>
+<node id="n3" labelV="Person"><data key="labelV">Person</data><data key="titel">Professor</data><data key="pnr">P03</data><data key="name">Charlie</data></node>
 <node id="n4" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB05</data><data key="ort">E-Strasse 38</data><data key="bezeichnung">Ev. Theologie</data></node>
 <node id="n5" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="bezeichnung">Fremdsprachliche Philologien</data><data key="ort">B-Strasse 55</data><data key="fbnr">FB10</data></node>
 <node id="n6" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB15</data><data key="ort">A-Strasse 62</data><data key="bezeichnung">Chemie</data></node>
