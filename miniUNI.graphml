@@ -22,10 +22,10 @@
 <node id="n5" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="bezeichnung">Fremdsprachliche Philologien</data><data key="ort">B-Strasse 55</data><data key="fbnr">FB10</data></node>
 <node id="n6" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB15</data><data key="ort">A-Strasse 62</data><data key="bezeichnung">Chemie</data></node>
 <node id="n7" labelV="Infrastruktur"><data key="labelV">Infrastruktur</data><data key="art">Bibliothek</data></node>
-<edge id="e0" source="n4" target="n5" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">20 min</data><data key="vnr">V01</data></edge>
-<edge id="e1" source="n4" target="n0" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15 min</data><data key="vnr">V02</data></edge>
-<edge id="e2" source="n6" target="n4" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V08</data></edge>
-<edge id="e3" source="n0" target="n6" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V11</data></edge>
+<edge id="e0" source="n4" target="n5" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">20</data><data key="vnr">V01</data></edge>
+<edge id="e1" source="n4" target="n0" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15</data><data key="vnr">V02</data></edge>
+<edge id="e2" source="n6" target="n4" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V08</data></edge>
+<edge id="e3" source="n0" target="n6" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V11</data></edge>
 <edge id="e4" source="n3" target="n4" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT05</data></edge>
 <edge id="e5" source="n2" target="n5" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT07</data></edge>
 <edge id="e6" source="n4" target="n1" labelE="HAT"><data key="labelE">HAT</data></edge>

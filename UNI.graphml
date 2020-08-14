@@ -32,19 +32,19 @@
 <node id="n15" labelV="Fachbereich"><data key="labelV">Fachbereich</data><data key="fbnr">FB20</data><data key="ort">D-Strasse 85</data><data key="bezeichnung">Medizin</data></node>
 <node id="n16" labelV="Infrastruktur"><data key="labelV">Infrastruktur</data><data key="art">Mensa</data></node>
 <node id="n17" labelV="Infrastruktur"><data key="labelV">Infrastruktur</data><data key="art">Bibliothek</data></node>
-<edge id="e0" source="n7" target="n9" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">20 min</data><data key="vnr">V01</data></edge>
-<edge id="e1" source="n7" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15 min</data><data key="vnr">V02</data></edge>
-<edge id="e2" source="n9" target="n13" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">25 min</data><data key="vnr">V03</data></edge>
-<edge id="e3" source="n10" target="n7" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">30 min</data><data key="vnr">V04</data></edge>
-<edge id="e4" source="n10" target="n13" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">10 min</data><data key="vnr">V05</data></edge>
-<edge id="e5" source="n10" target="n15" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">10 min</data><data key="vnr">V06</data></edge>
-<edge id="e6" source="n11" target="n10" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15 min</data><data key="vnr">V07</data></edge>
-<edge id="e7" source="n12" target="n7" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V08</data></edge>
-<edge id="e8" source="n13" target="n12" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V09</data></edge>
-<edge id="e9" source="n13" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V10</data></edge>
-<edge id="e10" source="n14" target="n12" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V11</data></edge>
-<edge id="e11" source="n14" target="n11" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V12</data></edge>
-<edge id="e12" source="n15" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12 min</data><data key="vnr">V13</data></edge>
+<edge id="e0" source="n7" target="n9" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">20</data><data key="vnr">V01</data></edge>
+<edge id="e1" source="n7" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15</data><data key="vnr">V02</data></edge>
+<edge id="e2" source="n9" target="n13" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">25</data><data key="vnr">V03</data></edge>
+<edge id="e3" source="n10" target="n7" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">30</data><data key="vnr">V04</data></edge>
+<edge id="e4" source="n10" target="n13" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">10</data><data key="vnr">V05</data></edge>
+<edge id="e5" source="n10" target="n15" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">10</data><data key="vnr">V06</data></edge>
+<edge id="e6" source="n11" target="n10" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Bus</data><data key="dauer">15</data><data key="vnr">V07</data></edge>
+<edge id="e7" source="n12" target="n7" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V08</data></edge>
+<edge id="e8" source="n13" target="n12" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V09</data></edge>
+<edge id="e9" source="n13" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V10</data></edge>
+<edge id="e10" source="n14" target="n12" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V11</data></edge>
+<edge id="e11" source="n14" target="n11" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V12</data></edge>
+<edge id="e12" source="n15" target="n14" labelE="VERBINDET"><data key="labelE">VERBINDET</data><data key="art">Auto</data><data key="dauer">12</data><data key="vnr">V13</data></edge>
 <edge id="e13" source="n2" target="n3" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT01</data></edge>
 <edge id="e14" source="n2" target="n4" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT02</data></edge>
 <edge id="e15" source="n2" target="n5" labelE="HALT"><data key="labelE">HALT</data><data key="art">Vorlesung</data><data key="vtnr">VT03</data></edge>
