@@ -10,7 +10,7 @@
 <key id="fbnr" for="node" attr.name="fbnr"/>
 <key id="art" for="edge" attr.name="art"/>
 <key id="vtnr" for="edge" attr.name="vtnr"/>
-<key id="dauer" for="edge" attr.name="dauer"/>
+<key id="dauer" for="edge" attr.name="dauer" attr.type="int"/>
 <key id="labelE" for="edge" attr.name="labelE"/>
 <key id="vnr" for="edge" attr.name="vnr"/>
 <graph id="G" edgedefault="directed">
