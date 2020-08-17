@@ -1,0 +1,93 @@
+# Path for import csv files in Gremlin Console
+C:/Users/Kien/Desktop/Seminar/Neo4j/neo4jDatabases/database-831bdd9f-8eff-4e98-9d33-431ab65f49da/installation-4.1.0/import
+
+#------------------------------------------------------------------
+# 			Cypher
+#------------------------------------------------------------------
+
+# Import Export Configurations for Neo4j
+apoc.export.file.enabled=true
+apoc.import.file.enabled=true
+
+
+# Clear Database
+# Clear Relationships along with Nodes
+Match (a)-[r]->() delete a,r
+# Clear Nodes
+Match (a) delete a
+
+
+# Load CSV Node of Label Person
+LOAD CSV WITH HEADERS FROM 'file:///Personal.csv' AS line
+CREATE (:Person {pnr: line.PNr, name: line.Name, titel: line.Titel})
+
+
+# Load CSV Node of Label Fachbereich
+LOAD CSV WITH HEADERS FROM 'file:///Fachbereiche.csv' AS line
+CREATE (:Fachbereich {fbnr: line.FBNr, bezeichnung: line.Bezeichnung, ort: line.Ort})
+
+
+# Load CSV Relationship Verbindung
+LOAD CSV WITH HEADERS FROM 'file:///Verbindung.csv' AS line
+MATCH (von:Fachbereich {fbnr: line.Von}),  (zu:Fachbereich {fbnr: line.Zu})
+CREATE (von)-[:VERBINDET {vnr: line.VNr, dauer: toInteger(line.Dauer), art: line.Verkehrsart}]->(zu)
+
+
+# Load CSV Relationship Veranstaltung
+LOAD CSV WITH HEADERS FROM 'file:///Veranstaltung.csv' AS line
+MATCH (person:Person {pnr: line.Personal}),  (fachbereich:Fachbereich {fbnr: line.Fachbereich})
+CREATE (person)-[:HALT {vtnr: line.VTNr, art: line.Veranstaltungsart}]->(fachbereich)
+
+
+# Create Node of Label Infrastruktur
+CREATE (:Infrastruktur { art: 'Mensa'})
+CREATE (:Infrastruktur { art: 'Bibliothek'})
+
+
+# Load CSV Relationship
+LOAD CSV WITH HEADERS FROM 'file:///Infrastruktur.csv' AS line
+MATCH (von:Fachbereich {fbnr: line.FBNr}),  (zu:Infrastruktur {art: line.Infrastruktur})
+CREATE (von)-[:HAT]->(zu)
+
+
+# The following query exports the whole database to the file gremlin.graphml
+CALL apoc.export.graphml.all("UNI.graphml", {})
+
+
+#------------------------------------------------------------------
+# 			SQL
+#------------------------------------------------------------------
+CREATE TABLE personal (PNr VARCHAR(20) PRIMARY KEY,Name VARCHAR(100),Titel VARCHAR(100));
+COPY personal(pnr, name, titel)
+FROM 'C:\Users\Kien\Desktop\Seminar\Excel and CSV Datenbank\Personal.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+CREATE TABLE Fachbereiche (FBNr VARCHAR(20) PRIMARY KEY,Bezeichnung VARCHAR(100),Ort VARCHAR(100));
+COPY fachbereiche(fbnr,bezeichnung, ort)
+FROM 'C:\Users\Kien\Desktop\Seminar\Excel and CSV Datenbank\Fachbereiche.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+CREATE TABLE verbindung (vNr VARCHAR(20) PRIMARY KEY,Dauer INT ,Von VARCHAR(100) REFERENCES Fachbereiche (FBNr),Zu VARCHAR(100) REFERENCES Fachbereiche (FBNr),Verkehrsart VARCHAR(100));
+COPY verbindung(vnr, dauer, von,zu,verkehrsart)
+FROM 'C:\Users\Kien\Desktop\Seminar\Excel and CSV Datenbank\Verbindung.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+CREATE TABLE veranstaltung (VTNr VARCHAR(20) PRIMARY KEY,Veranstaltungsart VARCHAR(100),Personal VARCHAR(100) REFERENCES personal (PNr),Fachbereich VARCHAR(100) REFERENCES Fachbereiche (FBNr));
+COPY veranstaltung(vtnr, veranstaltungsart, personal,fachbereich)
+FROM 'C:\Users\Kien\Desktop\Seminar\Excel and CSV Datenbank\Veranstaltung.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+CREATE TABLE Infrastruktur (FBNr VARCHAR(20) REFERENCES Fachbereiche (FBNr),Infrastruktur VARCHAR(100));
+COPY infrastruktur(fbnr,infrastruktur)
+FROM 'C:\Users\Kien\Desktop\Seminar\Excel and CSV Datenbank\Infrastruktur.csv'
+DELIMITER ','
+CSV HEADER;
+

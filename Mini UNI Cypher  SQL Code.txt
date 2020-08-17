@@ -1,0 +1,162 @@
+# Path for import csv files in Gremlin Console
+C:/Users/Kien/Desktop/Seminar/Neo4j/neo4jDatabases/database-10ee9ef9-2a7d-4d70-89a8-b1ed024eb9b2/installation-4.1.0/import
+
+#------------------------------------------------------------------
+# 			Cypher
+#------------------------------------------------------------------
+
+# Import Export Configurations for Neo4j
+apoc.export.file.enabled=true
+apoc.import.file.enabled=true
+
+
+# Clear Database
+# Clear Relationships
+Match (a)-[r]->() delete a,r
+# Clear Nodes
+Match (a) delete a
+
+
+# Create Node of Label Person
+CREATE (:Person {pnr: 'P01', name: 'Alpha', titel: 'Doktor' })
+CREATE (:Person {pnr: 'P03', name: 'Charlie', titel: 'Professor' })
+
+
+# Create Node of Label Fachbereich
+CREATE (:Fachbereich {fbnr: 'FB05', bezeichnung: 'Ev. Theologie', ort: 'E-Strasse 38' })
+CREATE (:Fachbereich {fbnr: 'FB10', bezeichnung: 'Fremdsprachliche Philologien', ort: 'B-Strasse 55' })
+CREATE (:Fachbereich {fbnr: 'FB15', bezeichnung: 'Chemie', ort: 'A-Strasse 62' })
+CREATE (:Fachbereich {fbnr: 'FB19', bezeichnung: 'Geographie', ort: 'C-Strasse 8' })
+
+
+# Create Relationship Verbindung
+MATCH (a:Fachbereich),(b:Fachbereich)
+WHERE a.fbnr = 'FB05' AND b.fbnr = 'FB10'
+CREATE (a)-[r:VERBINDET {vnr: 'V01', dauer: '20', art: 'Bus'}]->(b)
+
+MATCH (a:Fachbereich),(b:Fachbereich)
+WHERE a.fbnr = 'FB05' AND b.fbnr = 'FB19'
+CREATE (a)-[r:VERBINDET {vnr: 'V02', dauer: '15', art: 'Bus'}]->(b)
+
+MATCH (a:Fachbereich),(b:Fachbereich)
+WHERE a.fbnr = 'FB15' AND b.fbnr = 'FB05'
+CREATE (a)-[r:VERBINDET {vnr: 'V08', dauer: '12', art: 'Auto'}]->(b)
+
+MATCH (a:Fachbereich),(b:Fachbereich)
+WHERE a.fbnr = 'FB19' AND b.fbnr = 'FB15'
+CREATE (a)-[r:VERBINDET {vnr: 'V11', dauer: '12', art: 'Auto'}]->(b)
+
+
+# Create Relationship Veranstaltung
+MATCH (a:Person),(b:Fachbereich)
+WHERE a.pnr = 'P03' AND b.fbnr = 'FB05'
+CREATE (a)-[r:HALT {vtnr: 'VT05', art: 'Vorlesung'}]->(b)
+
+MATCH (a:Person),(b:Fachbereich)
+WHERE a.pnr = 'P01' AND b.fbnr = 'FB10'
+CREATE (a)-[r:HALT {vtnr: 'VT07', art: 'Vorlesung'}]->(b)
+
+
+# Create Node of Label Infrastruktur
+CREATE (:Infrastruktur { art: 'Mensa'})
+CREATE (:Infrastruktur { art: 'Bibliothek'})
+
+
+# Create Relationship mit Infrastruktur
+MATCH (a:Fachbereich),(b:Infrastruktur)
+WHERE a.fbnr = 'FB05' AND b.art = 'Mensa'
+CREATE (a)-[r:HAT]->(b)
+
+MATCH (a:Fachbereich),(b:Infrastruktur)
+WHERE a.fbnr = 'FB10' AND b.art = 'Mensa'
+CREATE (a)-[r:HAT]->(b)
+
+MATCH (a:Fachbereich),(b:Infrastruktur)
+WHERE a.fbnr = 'FB10' AND b.art = 'Bibliothek'
+CREATE (a)-[r:HAT]->(b)
+
+MATCH (a:Fachbereich),(b:Infrastruktur)
+WHERE a.fbnr = 'FB15' AND b.art = 'Mensa'
+CREATE (a)-[r:HAT]->(b)
+
+MATCH (a:Fachbereich),(b:Infrastruktur)
+WHERE a.fbnr = 'FB19' AND b.art = 'Bibliothek'
+CREATE (a)-[r:HAT]->(b)
+
+MATCH (a:Fachbereich),(b:Infrastruktur)
+WHERE a.fbnr = 'FB19' AND b.art = 'Mensa'
+CREATE (a)-[r:HAT]->(b)
+
+
+# The following query exports the whole database to the file gremlin.graphml
+CALL apoc.export.graphml.all("miniUNI.graphml", {})
+
+
+# Change property name
+MATCH (c:Person)
+WHERE c.titel IS NULL
+SET c.titel = c.title
+REMOVE c.title
+
+#------------------------------------------------------------------
+# 			SQL
+#------------------------------------------------------------------
+
+CREATE TABLE Personal 
+	(PNr varchar(20) PRIMARY KEY,
+	Name varchar(100),
+	Titel varchar(100));
+INSERT INTO Personal 
+	VALUES ('P01','Alpha','Doktor');
+INSERT INTO Personal 
+	VALUES ('P03','Charlie','Professor');
+
+CREATE TABLE Fachbereiche 
+	(FBNr varchar(20) PRIMARY KEY,
+	Bezeichnung varchar(100),
+	Ort varchar(100));
+INSERT INTO Fachbereiche 
+	VALUES ('FB01','Rechtswissenschaften','A-Strasse 1');
+INSERT INTO Fachbereiche 
+	VALUES ('FB02','Wirtschaftswissenschaften','B-Strasse 28');
+INSERT INTO Fachbereiche 
+	VALUES ('FB10','Fremdsprachliche Philologien','B-Strasse 55');
+
+CREATE TABLE Verbindung 
+	(VNr varchar(20) PRIMARY KEY,
+	Dauer varchar(100),
+	Von varchar(100)references Fachbereiche (FBNr),
+	Zu varchar(100)references Fachbereiche (FBNr),
+	Verkehrsart varchar(100));
+INSERT INTO Verbindung 
+	VALUES ('V01','20 min','FB01','FB02','Bus');
+INSERT INTO Verbindung 
+	VALUES ('V10','5 min','FB02','FB10','zu Fuß');
+INSERT INTO Verbindung 
+	VALUES ('V11','5 min','FB10','FB02','zu Fuß');
+
+CREATE TABLE Veranstaltung 
+	(VTNr varchar(20) PRIMARY KEY,
+	Veranstaltungsart varchar(100),
+	Personal varchar(100)references Personal (PNr),
+	Fachbereich varchar(100) references Fachbereiche (FBNr));
+INSERT INTO Veranstaltung 
+	VALUES ('VT01','Vorlesung','P03','FB01');
+INSERT INTO Veranstaltung 
+	VALUES ('VT02','Vorlesung','P03','FB02');
+INSERT INTO Veranstaltung 
+	VALUES ('VT11','Seminar','P01','FB02');
+
+CREATE TABLE Infrastruktur 
+	(FBNr varchar(20) references Fachbereiche (FBNr),
+	Infrastruktur varchar(100));
+INSERT INTO Infrastruktur 
+	VALUES ('FB01','Mensa');
+INSERT INTO Infrastruktur 
+	VALUES ('FB02','Mensa');
+INSERT INTO Infrastruktur 
+	VALUES ('FB10','Bibliothek');
+INSERT INTO Infrastruktur 
+	VALUES ('FB10','Mensa');
+
+

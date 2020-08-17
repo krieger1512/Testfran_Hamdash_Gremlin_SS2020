@@ -1,0 +1,78 @@
+graph = TinkerGraph.open()
+graph.io(graphml()).readGraph('miniUNI.graphml')
+g = graph.traversal()
+
+
+graph = TinkerGraph.open()
+graph.io(graphml()).readGraph('UNI.graphml')
+g = graph.traversal()
+
+
+g.V().has("titel","Doktor").values("name")
+g.V().has("titel","Professor").values("name")
+g.V().has("fbnr","FB10").out("HAT").values("art")
+g.V().has("titel","Professor").sideEffect(outE().count().store("o")).cap("o")
+g.V().choose(label()).option("Person", out("HALT").count()).option("Fachbereich", values("fbnr"))
+
+
+g.V().has("name","Charlie").as("charlie").out("HALT").out("VERBINDET").in("HALT").where(neq("charlie")).values("name")
+g.V().match(
+__.as("charlie").has("name","Charlie"), 
+__.as("charlie").out("HALT").as("a"), 
+__.as("a").out("VERBINDET").as("b"),  
+__.as("b").in("HALT").as("dozent"), 
+where("charlie",neq("dozent"))).
+select("dozent").by("name")
+
+
+
+
+g.V().hasLabel("Person").where(has("titel","Doktor").or().filter({it.get().value("name").contains("i")})).valueMap("pnr","name")
+g.V().hasLabel("Person").values("name").map{it.get().length()}.dedup().is(gte(5))
+g.V().hasLabel("Person").where(has("pnr",neq("P01")).
+and().
+has("titel","Doktor")).
+values("name").
+map{it.get().length()}.max()
+
+
+
+
+g.E().match(
+__.as("veranstaltung").hasLabel("HALT"),
+__.as("veranstaltung").inV().has("fbnr",within("FB01","FB02","FB06")), 
+__.as("veranstaltung").outV().as("dozent")).
+select("dozent").by("pnr").groupCount().unfold().where(select(values).is(gt(1))).fold()
+
+
+
+
+g.E().hasLabel("VERBINDET").order().by("dauer", decr).limit(3).valueMap("vnr","dauer")
+
+
+
+
+g.V().hasLabel("Infrastruktur").has("art","Bibliothek").in("HAT").in("HALT").values("name")
+fbVonP01 = g.V().has("pnr","P01").out("HALT").values("fbnr").toList()
+g.V().union(
+__.has("pnr","P02"),
+__.has("pnr","P03")).out("HALT").has("fbnr", not(within(fbVonP01))).dedup().values("fbnr").fold()
+
+
+
+P02VTOrt = g.V().has("pnr","P02").out("HALT").values("fbnr").toList()
+g.V().has("pnr","P02").out("HALT").repeat(out("VERBINDET")).emit().times(3).has("fbnr", not(within(P02VTOrt))).values("fbnr").fold()
+
+
+
+
+g.V().has("fbnr","FB13").repeat(out("VERBINDET").simplePath()).until(has("fbnr","FB10")).path().by("fbnr").limit(1)
+g.V().has("fbnr","FB13").repeat(outE("VERBINDET").inV().simplePath()).until(has("fbnr","FB10")).
+           path().as('Path').
+map(unfold().coalesce(values('dauer'),
+                                 constant(0)).sum()).as('Gesamtdauer').
+           select('Gesamtdauer','Path').order().by("Gesamtdauer", incr)
+
+
+
+
